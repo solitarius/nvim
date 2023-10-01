@@ -1,0 +1,8 @@
+{
+  "bufexplorer": { "branch": "master", "commit": "20f0440948653b5482d555a35a432135ba46a26d" },
+  "gruvbox.nvim": { "branch": "main", "commit": "e810b46367a89e8b733cd100d12a6c8b2fc022c3" },
+  "lazy.nvim": { "branch": "main", "commit": "6a2c47e6424a3f1e373bfeb714b716f6be13501c" },
+  "nvim-treesitter": { "branch": "master", "commit": "dd4e2dbc002dfce109d621e8bdcd9d89438b0a32" },
+  "plenary.nvim": { "branch": "master", "commit": "9ce85b0f7dcfe5358c0be937ad23e456907d410b" },
+  "telescope.nvim": { "branch": "master", "commit": "54930e1abfc94409e1bb9266e752ef8379008592" }
+}
