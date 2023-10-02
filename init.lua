@@ -2,6 +2,6 @@ require 'lazy-bootstrap'
 
 require 'options'
 
-require 'keys'
+require 'mappings'
 
 require('lazy').setup('plugins')

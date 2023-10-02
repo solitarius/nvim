@@ -7,7 +7,7 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      require 'extensions.colorscheme.gruvbox'
+      require 'configs.colorscheme.gruvbox'
     end,
   },
   {
@@ -24,7 +24,7 @@ return {
     build = ':TSUpdate',
     event = { 'BufReadPost', 'BufNewFile' },
     config = function()
-      require 'extensions.treesitter'
+      require 'configs.treesitter'
     end
   },
   --end
