@@ -1,6 +1,8 @@
 require 'helpers.globals'
 
 g.mapleader = ','
+-- Set associating between turned on plugins and filetype
+cmd [[filetype plugin on]]
 
 --[[ русский ]]--
 opt.keymap = 'russian-jcukenwin'
@@ -18,31 +20,31 @@ opt.tabstop = 2
 opt.smartindent = true
 
 --[[ search ]]--
--- Игнорировать регистр при поиске
-opt.ignorecase = true
+opt.ignorecase = true  -- Игнорировать регистр при поиске
 -- Не игнорировать регистр, если есть символы в верхнем регистре
 -- Если напишем 'Ignore', то он будет искать только 'Ignore'
 opt.smartcase = true
--- Подсвечивать найденные текстовые объекты
-opt.showmatch = false
+opt.joinspaces = false  -- Join multiple spaces in search
+opt.showmatch = false  -- Подсвечивать найденные текстовые объекты
 
 --[[ other ]]--
--- Вертикальные сплиты становятся справа
-opt.splitright = true
--- Горизонтальные сплиты становятся снизу
-opt.splitbelow = true
+opt.splitright = true  -- Вертикальные сплиты становятся справа
+opt.splitbelow = true  -- Горизонтальные сплиты становятся снизу
 
--- Используем системный буфер обмена
-opt.clipboard = 'unnamedplus'
+opt.wildmenu = true
+opt.wildmode = "longest:full,full"
 
--- Отключаем дополнение файлов в конце
-opt.fixeol = false
+opt.clipboard = 'unnamedplus' -- Используем системный буфер обмена
+opt.fixeol = false -- Отключаем дополнение файлов в конце
+
+opt.foldmethod = 'syntax'
 
 -- Автодополнение (встроенное в Neovim)
 opt.completeopt = 'menuone,noselect'
 
 -- Не автокомментировать новые линии при переходе на новую строку
-vim.cmd [[autocmd BufEnter * set fo-=c fo-=r fo-=o]]
+cmd [[autocmd BufEnter * set fo-=c fo-=r fo-=o]]
+cmd [[autocmd FileType * setlocal formatoptions-=cro]]
 
 opt.list = true -- Show some invisible characters (tabs...
 opt.listchars = {
@@ -50,11 +52,14 @@ opt.listchars = {
   trail = '·',
   eol = '↲',
 }
--- показывать нумерацию
-opt.number = true
--- command line
-opt.laststatus = 2
--- Make command line two lines high
-opt.ch = 2
--- Show the current command in the lower right corner
-opt.showcmd = true
+opt.number = true  -- показывать нумерацию
+opt.laststatus = 2  -- command line
+opt.ch = 2  -- Make command line two lines high
+opt.showcmd = true  -- Show the current command in the lower right corner
+opt.textwidth = 0
+opt.colorcolumn = '100'
+
+opt.undofile = true --  keep undo history between sessions
+opt.exrc = true  -- enable per-directory .nvim.lua files
+opt.secure = true  -- trust local config
+opt.signcolumn = 'yes'
