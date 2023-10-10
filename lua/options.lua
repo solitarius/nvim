@@ -17,7 +17,8 @@ opt.shiftwidth = 2
 -- 1 таб == 2 пробела c новой строки
 opt.tabstop = 2
 -- Подстраивать новые строки под предыдущий отступ
-opt.smartindent = true
+opt.smartindent = false
+opt.autoindent = false
 
 --[[ search ]]--
 opt.ignorecase = true  -- Игнорировать регистр при поиске
@@ -63,3 +64,7 @@ opt.undofile = true --  keep undo history between sessions
 opt.exrc = true  -- enable per-directory .nvim.lua files
 opt.secure = true  -- trust local config
 opt.signcolumn = 'yes'
+
+g.tagbar_foldlevel=0
+-- cmd [[let g:pyindent_disable_parentheses_indenting = 1]]
+g.pyindent_open_paren = 'shiftwidth()'

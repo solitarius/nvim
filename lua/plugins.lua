@@ -35,6 +35,7 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
       'ahmedkhalf/project.nvim',
+      'BurntSushi/ripgrep',
     },
     config = function()
       require 'configs.telescope'
@@ -91,7 +92,7 @@ return {
   {
     'nvim-lualine/lualine.nvim',
     config = function()
-      require('lualine').setup()
+      require 'configs.lualine'
     end
   },
   -- gitsign
@@ -120,9 +121,19 @@ return {
         line = ',c',
         ---Block-comment keymap
         block = ',b',
-    },
+      },
     },
     lazy = false,
-}
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {},
+    config = function()
+      require 'configs.ibl'
+    end
+  },
+  {'tpope/vim-surround'},
+  -- {'hynek/vim-python-pep8-indent'},
   --end
 }

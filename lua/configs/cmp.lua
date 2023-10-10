@@ -6,14 +6,16 @@ cmp.setup {
       require'luasnip'.lsp_expand(args.body) -- Luasnip expand
     end,
   },
+  -- completion = {
+  --   autocomplete = false
+  -- },
 
   -- Mappings for cmp
   mapping = {
 
     -- Autocompletion menu
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i' }),
-    ['<CR>'] = cmp.config.disable,                      -- Turn off autocomplete on <CR>
-    ['<C-y>'] = cmp.mapping.confirm({ select = true }), -- Turn on autocomplete on <C-y>
+    ['<M-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i' }),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Turn on autocomplete on <C-y>
 
     -- Use <C-e> to abort autocomplete
     ['<C-e>'] = cmp.mapping({
@@ -30,10 +32,9 @@ cmp.setup {
     { name = 'nvim_lsp' },                -- LSP
     { name = 'nvim_lsp_signature_help' }, -- LSP for parameters in functions
     { name = 'nvim_lua' },                -- Lua Neovim API
-    { name = 'luasnip' },                 -- Luasnip
-    { name = 'buffer' },                  -- Buffers
+    -- { name = 'luasnip' },                 -- Luasnip
+    -- { name = 'buffer' },                  -- Buffers
     { name = 'path' },                    -- Paths
-    { name = 'emoji' },                   -- Emoji
   }, {
   }),
 }

@@ -43,4 +43,4 @@ nm('gR', '<cmd>lua vim.lsp.buf.rename()<CR>')            -- Rename an object
 nm('gd', '<cmd>lua vim.lsp.buf.declaration()<cr>')       -- Go to declaration
 
 -- tagbar
-nm('<F8>', [[:TagbarToggle<CR>]])
+nm('<F12>', [[:TagbarToggle<CR>]])
