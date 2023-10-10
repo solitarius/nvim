@@ -134,6 +134,6 @@ return {
     end
   },
   {'tpope/vim-surround'},
-  -- {'hynek/vim-python-pep8-indent'},
+  {'hynek/vim-python-pep8-indent'},
   --end
 }
