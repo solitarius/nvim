@@ -1,4 +1,9 @@
-require 'helpers.globals'
+local cmd = vim.cmd -- Command function
+local api = vim.api -- Neovim API
+local lsp = vim.lsp -- LSP API
+local fn = vim.fn   -- Vim function
+local g = vim.g     -- Vim globals
+local opt = vim.opt -- Vim optionals
 
 g.mapleader = ','
 -- Set associating between turned on plugins and filetype
@@ -13,9 +18,9 @@ opt.imsearch = 0
 -- use spaces instead of tabs
 opt.expandtab = true
 -- Установка количества пробельных символов, когда сдвигаем с помощью '<', '>'
-opt.shiftwidth = 2
--- 1 таб == 2 пробела c новой строки
-opt.tabstop = 2
+opt.shiftwidth = 4
+-- 1 таб == 4 пробела c новой строки
+opt.tabstop = 4
 -- Подстраивать новые строки под предыдущий отступ
 opt.smartindent = false
 opt.autoindent = false
@@ -49,9 +54,9 @@ cmd [[autocmd FileType * setlocal formatoptions-=cro]]
 
 opt.list = true -- Show some invisible characters (tabs...
 opt.listchars = {
-  tab = '» ',
-  trail = '·',
-  eol = '↲',
+    tab = '» ',
+    trail = '·',
+    eol = '↲',
 }
 opt.number = true  -- показывать нумерацию
 opt.laststatus = 2  -- command line
@@ -68,3 +73,18 @@ opt.signcolumn = 'yes'
 g.tagbar_foldlevel=0
 -- cmd [[let g:pyindent_disable_parentheses_indenting = 1]]
 g.pyindent_open_paren = 'shiftwidth()'
+
+cmd [[command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=wipe noswapfile | nnoremap <script> <silent> <nowait> <buffer> q :q<CR> | r !<args>]]
+
+cmd [[autocmd FileType python nnoremap <buffer> <F4> :silent R python #<cr>]]
+cmd [[autocmd FileType sql nnoremap <buffer> <F4> :silent R psql -d test_tamtam -a -f #<cr>]]
+
+cmd [[let &mp="ruff check tamtam tests"]]
+
+opt.spelllang = 'ru,en_us'
+opt.spell = true
+
+opt.termguicolors = true
+
+-- Set completeopt to have a better completion experience
+opt.completeopt = { 'menuone', 'noselect' }

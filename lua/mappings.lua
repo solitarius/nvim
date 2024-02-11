@@ -41,6 +41,18 @@ nm('K', '<cmd>lua vim.lsp.buf.hover()<CR>' )             -- Hover object
 nm('ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')       -- Code actions
 nm('gR', '<cmd>lua vim.lsp.buf.rename()<CR>')            -- Rename an object
 nm('gd', '<cmd>lua vim.lsp.buf.declaration()<cr>')       -- Go to declaration
+nm('gD', '<cmd>lua vim.lsp.buf.definition()<cr>')       -- Go to definition
+nm('gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
+nm('gu', '<cmd>lua vim.lsp.buf.references()<cr>')
 
+nm('<F5>', [[:silent make<CR>]])
+nm('<F8>', [[:TroubleToggle<CR>]])
 -- tagbar
 nm('<F12>', [[:TagbarToggle<CR>]])
+
+-- next and prev errors
+nm('[e', ':lprev<cr>')
+nm(']e', ':lnext<cr>')
+
+nm('[q', ':cprev<cr>')
+nm(']q', ':cnext<cr>')
